@@ -181,3 +181,74 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Block Diagram Reduction Demo Toggle
+function toggleBDRDemo() {
+    const demo = document.getElementById('bdr-demo');
+    const btn = document.querySelector('.demo-toggle-btn');
+    
+    if (demo && btn) {
+        if (demo.style.display === 'none' || !demo.style.display) {
+            demo.style.display = 'block';
+            btn.classList.add('active');
+            btn.innerHTML = '<i class="fas fa-chevron-up"></i> Hide Demo';
+            
+            // Initialize first step if not already shown
+            const step1 = document.getElementById('step1');
+            const step1Btn = document.getElementById('step1-btn');
+            if (step1 && step1.style.display === 'none') {
+                showStep(1);
+            }
+        } else {
+            demo.style.display = 'none';
+            btn.classList.remove('active');
+            btn.innerHTML = '<i class="fas fa-chevron-down"></i> View Interactive Demo';
+        }
+    }
+}
+
+// Block Diagram Reduction Step Navigation
+function showStep(stepNumber) {
+    // Hide all steps
+    for (let i = 1; i <= 4; i++) {
+        const step = document.getElementById(`step${i}`);
+        const btn = document.getElementById(`step${i}-btn`);
+        if (step) {
+            step.style.display = 'none';
+        }
+        if (btn) {
+            btn.classList.remove('active');
+        }
+    }
+    
+    // Show selected step
+    const selectedStep = document.getElementById(`step${stepNumber}`);
+    const selectedBtn = document.getElementById(`step${stepNumber}-btn`);
+    
+    if (selectedStep) {
+        selectedStep.style.display = 'block';
+    }
+    if (selectedBtn) {
+        selectedBtn.classList.add('active');
+    }
+}
+
+// Generic project detail toggle
+function toggleProjectDetails(panelId, btn) {
+    const panel = document.getElementById(panelId);
+    if (!panel || !btn) return;
+
+    const isHidden = panel.style.display === 'none' || panel.style.display === '';
+    panel.style.display = isHidden ? 'block' : 'none';
+    btn.classList.toggle('active', isHidden);
+
+    if (panelId === 'transformer-details') {
+        btn.innerHTML = isHidden
+            ? '<i class="fas fa-times-circle"></i> Hide MATLAB Simulation'
+            : '<i class="fas fa-bolt"></i> View MATLAB Simulation';
+    } else if (panelId === 'signal-details') {
+        btn.innerHTML = isHidden
+            ? '<i class="fas fa-times-circle"></i> Hide MATLAB Code &amp; Result'
+            : '<i class="fas fa-code"></i> View MATLAB Code &amp; Result';
+    }
+}
+

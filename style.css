@@ -596,6 +596,277 @@ section {
     font-weight: 500;
 }
 
+.project-detail-btn {
+    width: 100%;
+    margin-top: 1.2rem;
+    padding: 12px 18px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.project-detail-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+}
+
+.project-detail-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.project-detail-panel {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    animation: fadeIn 0.4s ease;
+}
+
+.project-detail-panel h4 {
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.detail-list {
+    margin: 0 0 1rem 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.detail-list li {
+    margin-bottom: 0.4rem;
+}
+
+.detail-note {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-top: 0.5rem;
+}
+
+.code-block {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    border: 1px solid #1e293b;
+    margin-bottom: 1rem;
+}
+
+/* Block Diagram Reduction Project Card */
+.bdr-project-card {
+    position: relative;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.project-link-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.project-link-btn:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(34, 197, 94, 0.3);
+    color: white;
+}
+
+.demo-toggle-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: var(--gradient-1);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.demo-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+}
+
+.demo-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.demo-toggle-btn.active i {
+    transform: rotate(180deg);
+}
+
+.bdr-demo-content {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e0e7ff;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.demo-container-inner {
+    max-width: 100%;
+}
+
+.step-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.step-btn {
+    padding: 10px 20px;
+    background: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.step-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(99, 102, 241, 0.3);
+}
+
+.step-btn.active {
+    background: var(--gradient-1);
+    color: white;
+    border-color: transparent;
+}
+
+.diagram-container {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    min-height: 400px;
+}
+
+.diagram-step {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.block-diagram {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.diagram-svg {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+.diagram-svg .label {
+    font-size: 14px;
+    font-weight: 600;
+    fill: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+}
+
+.step-explanation {
+    background: #f1f5f9;
+    border-left: 4px solid var(--primary-color);
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.step-explanation p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.step-explanation p:last-child {
+    margin-bottom: 0;
+}
+
+.step-explanation strong {
+    color: var(--text-primary);
+}
+
+.step-explanation .formula {
+    font-family: 'Courier New', monospace;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
 /* Achievements Section */
 .achievements {
     background: var(--light-bg);
@@ -802,6 +1073,29 @@ section {
 
     .section-title {
         font-size: 2rem;
+    }
+
+    .step-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .diagram-container {
+        padding: 1rem;
+    }
+
+    .block-diagram {
+        padding: 1rem;
+        overflow-x: auto;
+    }
+
+    .diagram-svg {
+        min-width: 800px;
     }
 }
 
